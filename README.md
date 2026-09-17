@@ -24,7 +24,7 @@ Also here: a one-command CLI for profiles, and the
 [Bright Data CLI](#coding-agents), which needs no JavaScript at all.
 
 LinkedIn profile data is personal data. Use it within the law that applies to
-you: [Bright Data compliance](https://brightdata.com/legal/compliance).
+you: [Bright Data compliance](https://brightdata.com/legal-governance).
 
 ## Quickstart
 
