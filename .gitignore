@@ -1,0 +1,4 @@
+.env
+node_modules/
+linkedin.json
+package-lock.json

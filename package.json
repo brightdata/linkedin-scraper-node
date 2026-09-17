@@ -1,0 +1,39 @@
+{
+  "name": "@brightdata/linkedin-scraper-node",
+  "version": "0.1.0",
+  "description": "LinkedIn scraper in JavaScript: profiles, companies, jobs and posts as JSON, on the Bright Data LinkedIn Scraper API (Web Scraper API). No LinkedIn login, no browser. 5,000 free credits a month.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "linkedin-scraper": "src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test tests/",
+    "lint": "oxlint src tests"
+  },
+  "dependencies": {
+    "@brightdata/sdk": "^1.2.0"
+  },
+  "devDependencies": {
+    "oxlint": "^1.83.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brightdata/linkedin-scraper-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brightdata/linkedin-scraper-node/issues"
+  },
+  "homepage": "https://github.com/brightdata/linkedin-scraper-node#readme"
+}
