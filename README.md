@@ -332,23 +332,22 @@ and `last_name`. Read that flag rather than keeping your own list.
 
 Regenerated every day from the dataset schema, via
 `client.datasets.linkedinProfiles.getMetadata()`, so it cannot go stale. A
-profile carries the fields that apply to it: the sample file has 32 of
-these 46, plus `timestamp` and `input`, which the schema
-does not list.
+post carries the fields that apply to it; the sample file has 34
+of these 46.
 
 | field | type | description |
 | --- | --- | --- |
-| `id` | text | Personal data. A unique identifier for the person's LinkedIn profile |
-| `name` | text | Personal data. Profile name |
+| `id` | text | A unique identifier for the person's LinkedIn profile |
+| `name` | text | Profile name |
 | `city` | text | Geographical location of the user |
 | `country_code` | text | Geographical location of the user |
 | `position` | text | The current job title or position of the profile |
-| `about` | text | Personal data. A concise profile summary. In some cases, only a truncated version with "…" is displayed on the website, and this is the version we capture |
+| `about` | text | A concise profile summary. In some cases, only a truncated version with "…" is displayed on the website, and this is the version we capture |
 | `posts` | array | Contains information related to the user's last LinkedIn posts. It typically includes the post title, created date, URL link to the post, etc. |
 | `groups` | array | The LinkedIn groups that the profile is a part of |
 | `current_company` | object | Provides information about the user's current professional position. It typically includes the company name, the user's job title, the company ID, and the industry or sector to which the company belongs |
 | `experience` | array | Contains information about user's professional history. It typically includes the user's job title, length of time the user held the position, the geographic location of the company, the start and end date, the company name, URL link to the company profile, etc. |
-| `url` | url | Personal data. URL that link directly to the LinkedIn profile |
+| `url` | url | URL that link directly to the LinkedIn profile |
 | `people_also_viewed` | array | Provides a list of LinkedIn profiles that users who have viewed the user's profile, have viewed these as well |
 | `educations_details` | text | Provides information about the user's educational background |
 | `education` | array | Provides information about the user's educational background. It typically includes the degree, the start and end year, the filed, etc. |
@@ -368,8 +367,8 @@ does not list.
 | `projects` | array | Professional or academic projects |
 | `organizations` | array | Memberships in professional organizations |
 | `location` | text | Geographical location of the user |
-| `input_url` | url | Personal data. The URL that was entered when starting the scraping process |
-| `linkedin_id` | text | Personal data. LinkedIn profile identifier |
+| `input_url` | url | The URL that was entered when starting the scraping process |
+| `linkedin_id` | text | LinkedIn profile identifier |
 | `activity` | array | Any activity the user has regarding posts |
 | `linkedin_num_id` | text | Numeric LinkedIn profile ID |
 | `banner_image` | url | Banner image |
@@ -378,8 +377,8 @@ does not list.
 | `default_avatar` | boolean | Is the avatar picture the default avatar empty picture |
 | `memorialized_account` | boolean | Boolean indicating if the account is memorialized |
 | `bio_links` | array | External links added to the bio |
-| `first_name` | text | Personal data. First name of the user |
-| `last_name` | text | Personal data. Last name of the user |
+| `first_name` | text | First name of the user |
+| `last_name` | text | Last name of the user |
 | `urn_id` | text | The Uniform Resource Name (URN) used by LinkedIn |
 | `urn` | text | Uniform Resource Name |
 | `influencer` | boolean | Indicator if the profile marked as influencer |
