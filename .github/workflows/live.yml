@@ -189,6 +189,10 @@ jobs:
           // fields is an object keyed by field name, whatever the SDK's .d.ts says
           // it is (DatasetField[]). Iterating it as an array yields nothing.
           const entries = Object.entries(fields);
+          // The sample carries a subset of the schema, and the API also returns
+          // fields the schema never lists, so these two counts differ.
+          const known = entries.filter(([n]) => n in sample).length;
+          const extra = Object.keys(sample).filter((k) => !(k in fields));
           const rows = ["| field | type | description |", "| --- | --- | --- |"];
           for (const [name, spec] of entries) {
             const desc = (spec.description ?? "")
@@ -198,7 +202,10 @@ jobs:
               .join(" ")
               .replaceAll("`", "'")   // no fences: a description must not become a command
               .replaceAll("|", "/");  // no table breaks
-            rows.push(`| \`${name}\` | ${spec.type} | ${desc} |`);
+            // The API marks personal data itself. Carry that through rather
+            // than keeping a hand-written list that drifts from the schema.
+            const pii = spec.pii ? "Personal data. " : "";
+            rows.push(`| \`${name}\` | ${spec.type} | ${pii}${desc} |`);
           }
           const block = [
             start,
@@ -207,8 +214,9 @@ jobs:
             "",
             "Regenerated every day from the dataset schema, via",
             "`client.datasets.linkedinProfiles.getMetadata()`, so it cannot go stale. A",
-            `post carries the fields that apply to it; the sample file has ${Object.keys(sample).length}`,
-            `of these ${entries.length}.`,
+            `profile carries the fields that apply to it: the sample file has ${known}`,
+            `of these ${entries.length}${extra.length ? `, plus ${extra.map((k) => `\`${k}\``).join(" and ")},` : "."}`,
+            ...(extra.length ? ["which the schema does not list."] : []),
             "",
             ...rows,
             "",

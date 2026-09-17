@@ -446,8 +446,13 @@ once, or use `bdata login --device` over SSH and in CI:
 
 ```bash
 npx -p @brightdata/cli bdata login
-npx -p @brightdata/cli bdata pipelines linkedin_profiles "https://www.linkedin.com/in/satyanadella/"
+npx -p @brightdata/cli bdata pipelines linkedin_person_profile "https://www.linkedin.com/in/satyanadella/"
 ```
+
+`bdata pipelines list` prints every type. The LinkedIn ones are
+`linkedin_person_profile`, `linkedin_company_profile`, `linkedin_job_listings`,
+`linkedin_posts` and `linkedin_people_search`. Each takes URLs, prints JSON,
+and costs one credit per record.
 
 `npx skills add brightdata/skills` teaches Claude Code, Cursor and Codex these
 commands and the docs, so plain language works afterwards. Full guide:
