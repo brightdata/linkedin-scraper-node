@@ -8,7 +8,7 @@ to restore:
 # linkedin-scraper-node
 
 [![Live check](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml)
-[![last verified](https://img.shields.io/badge/last%20verified-17%20Sep%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
+[![last check failed](https://img.shields.io/badge/last%20check%20failed-18%20Sep%202026-red)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
 
 [Quickstart](#quickstart) · [Command](#or-run-it-as-a-command) · [Endpoints](#the-rest-of-the-api) · [Data](#the-data) · [Errors](#when-it-fails) · [Coding agents](#coding-agents) · [Docs](https://docs.brightdata.com/products/scrapers/linkedin/introduction) · [Support](#support)
 
