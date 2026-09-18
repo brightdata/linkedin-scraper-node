@@ -451,6 +451,14 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          # The tip of main, not this run's commit. A re-run checks out the
+          # commit the run first started on, but an earlier attempt of the same
+          # run may already have pushed a badge edit to this very line. Editing
+          # from that stale base gives git two versions of one line, and the
+          # rebase below stops on a conflict. From the tip, the line is replaced,
+          # never merged. This broke on 2026-09-18 when a failed run was re-run.
+          ref: main
       - name: Rewrite one badge line, commit only if it changed
         env:
           SCRAPE: ${{ needs.scrape.result }}
