@@ -1,9 +1,4 @@
-<!-- The banner belongs here, at .github/banner.png, once design supplies the
-LinkedIn twin of the Instagram one. Linking it before the file exists would
-render a broken image on the repository's front page. The alt text and link
-to restore:
 [![Scrape LinkedIn data with the LinkedIn Scraper API: profiles, companies, jobs, posts. Collect or discover by URL, name and keyword. Start free.](.github/banner.png)](https://brightdata.com/products/web-scraper/linkedin?utm_source=github)
--->
 
 # linkedin-scraper-node
 
