@@ -92,9 +92,6 @@ npm install -g github:brightdata/linkedin-scraper-node
 linkedin-scraper satyanadella reidhoffman
 ```
 
-While this repository is private, that install line works only for people with
-access to it.
-
 ```
 Fetching 2 LinkedIn profiles: satyanadella, reidhoffman
 One job for all of them, usually one to three minutes. One credit per profile.
