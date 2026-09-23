@@ -323,12 +323,12 @@ and `last_name`. Read that flag rather than keeping your own list.
 
 <!-- fields:start -->
 <details>
-<summary>All 46 fields, with type and description</summary>
+<summary>All 47 fields, with type and description</summary>
 
 Regenerated every day from the dataset schema, via
 `client.datasets.linkedinProfiles.getMetadata()`, so it cannot go stale. A
 profile carries the fields that apply to it: the sample file has 32
-of these 46, plus `timestamp` and `input`,
+of these 47, plus `timestamp` and `input`,
 which the schema does not list.
 
 | field | type | description |
@@ -379,6 +379,7 @@ which the schema does not list.
 | `urn` | text | Uniform Resource Name |
 | `influencer` | boolean | Indicator if the profile marked as influencer |
 | `fsd_profile_id` | text | FSD profile ID |
+| `backfilled_columns` | object | Indicates whether sticky columns were backfilled. Keys are column names and values are true/false. |
 
 </details>
 <!-- fields:end -->
