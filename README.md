@@ -478,3 +478,7 @@ Anything about the API, your account or your credits:
 ## License
 
 [Apache 2.0](LICENSE).
+
+## Python version
+
+The same LinkedIn scraper is available for Python: [brightdata/linkedin-scraper](https://github.com/brightdata/linkedin-scraper).
