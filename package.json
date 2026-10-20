@@ -4,7 +4,7 @@
   "description": "LinkedIn scraper in JavaScript: profiles, companies, jobs and posts as JSON, on the Bright Data LinkedIn Scraper API (Web Scraper API). No LinkedIn login, no browser. 5,000 free credits a month.",
   "private": true,
   "type": "module",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">=20"
   },
