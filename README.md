@@ -1,11 +1,11 @@
 [![Scrape LinkedIn data with the LinkedIn Scraper API: profiles, companies, jobs, posts. Collect or discover by URL, name and keyword. Start free.](.github/banner.png)](https://brightdata.com/products/web-scraper/linkedin?utm_source=github)
 
-# linkedin-scraper-node
+# LinkedIn scraper for Node.js and JavaScript
 
 [![Live check](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml)
 [![last verified](https://img.shields.io/badge/last%20verified-3%20Nov%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
 
-[Quickstart](#quickstart) · [Command](#or-run-it-as-a-command) · [Endpoints](#the-rest-of-the-api) · [Data](#the-data) · [Errors](#when-it-fails) · [Coding agents](#coding-agents) · [Docs](https://docs.brightdata.com/products/scrapers/linkedin/introduction) · [Support](#support)
+[Quickstart](#how-to-scrape-linkedin-data-with-nodejs) · [No login](#scrape-linkedin-without-login) · [CLI](#bulk-linkedin-profile-scraper-cli) · [Endpoints](#scrape-linkedin-profiles-companies-jobs-and-posts) · [Data](#linkedin-profile-data-fields-json) · [Errors](#linkedin-scraper-errors) · [MCP and Claude Code](#linkedin-mcp-server-and-claude-code-skill) · [Free credits](#is-this-linkedin-scraper-free) · [Docs](https://docs.brightdata.com/products/scrapers/linkedin/introduction) · [Support](#support)
 
 LinkedIn profiles, companies, jobs and posts as JSON, in JavaScript. No LinkedIn
 login, no browser. Built on the
@@ -16,12 +16,12 @@ Full API docs:
 [LinkedIn Scraper API](https://docs.brightdata.com/products/scrapers/linkedin/introduction).
 
 Also here: a one-command CLI for profiles, and the
-[Bright Data CLI](#coding-agents), which needs no JavaScript at all.
+[Bright Data CLI](#linkedin-mcp-server-and-claude-code-skill), which needs no JavaScript at all.
 
 LinkedIn profile data is personal data. Use it within the law that applies to
 you: [Bright Data compliance](https://brightdata.com/legal-governance).
 
-## Quickstart
+## How to scrape LinkedIn data with Node.js
 
 Node 20 or newer. This package is ESM, so use `import`, not `require`.
 
@@ -82,10 +82,16 @@ through the synchronous endpoint, which gives up after a minute.
 `pollTimeout` is milliseconds, not seconds. A number copied from a Python
 example expires before the first status check.
 
-## Or run it as a command
+## Scrape LinkedIn without login
 
-The command in this repo does the same for several profiles and writes one
-JSON file.
+The LinkedIn Scraper API needs no LinkedIn account and no LinkedIn login. The
+only credential is a Bright Data API key, set as `BRIGHTDATA_API_TOKEN` or
+stored by `bdata login`.
+
+## Bulk LinkedIn profile scraper CLI
+
+The command in this repo runs the Node.js quickstart for several profiles at once
+and writes one JSON file.
 
 ```bash
 npm install -g github:brightdata/linkedin-scraper-node
@@ -142,7 +148,7 @@ satyanadella: Satya Nadella
 zz-not-a-real-profile-zz failed: The profile is hidden or private.
 ```
 
-## The rest of the API
+## Scrape LinkedIn profiles, companies, jobs and posts
 
 The command covers the first row of the table below. The rest of the SDK's
 LinkedIn surface is the other rows, documented in the
@@ -184,7 +190,7 @@ and fetch in one call and hand back a `ScrapeResult`. The `collect` and
 group can pass `includeErrors`. A run that must tell a dead profile from an
 empty one uses it.
 
-### Several profiles, one job
+### Scrape multiple LinkedIn profiles in one job
 
 An array of URLs is one job, not one per profile.
 
@@ -246,7 +252,7 @@ fetched: Satya Nadella | Microsoft
 A `ScrapeJob` also has `download()` to write the snapshot to disk and `cancel()`
 to stop it.
 
-### A company
+### Scrape a LinkedIn company page
 
 ```javascript
 import { bdclient } from "@brightdata/sdk";
@@ -267,7 +273,7 @@ await client.close();
 Bright Data | 407 employees on LinkedIn
 ```
 
-### Jobs by keyword and location
+### Scrape LinkedIn jobs by keyword and location
 
 `location` is required. `keyword`, `company`, `time_range`, `job_type`,
 `experience_level` and `remote` are optional.
@@ -303,7 +309,7 @@ the request, with no error, and the job runs uncapped
 `DiscoverOptions` type says to omit `async`, so the typed call is the one that
 costs you.
 
-## The data
+## LinkedIn profile data fields (JSON)
 
 The fields most people want from a profile:
 
@@ -412,7 +418,7 @@ The whole file, one profile with every field, is
 
 </details>
 
-## When it fails
+## LinkedIn scraper errors
 
 | you see | what it means |
 | --- | --- |
@@ -433,7 +439,7 @@ From the SDK, the same conditions look like this:
 | a row in `result.data` with an `error` key | The API's answer for one input, when you asked for `includeErrors`. The other rows are fine. |
 | zero rows where you expected an error | You did not pass `includeErrors: true`, so the API dropped the row that would have explained it. |
 
-## Coding agents
+## LinkedIn MCP server and Claude Code skill
 
 No JavaScript, nothing installed. Paste both lines; the first opens a browser
 once, or use `bdata login --device` over SSH and in CI:
@@ -467,6 +473,14 @@ An agent can also open the account itself, no signup form:
 Data connects to, from LangChain to Zapier and n8n:
 [integrations](https://docs.brightdata.com/integrations/introduction).
 
+## Is this LinkedIn scraper free?
+
+New Bright Data accounts get
+[5,000 free credits a month](https://docs.brightdata.com/general/account/billing-and-pricing/free-tier).
+Profiles, companies, jobs and posts cost one credit per record, so the free
+credits cover 5,000 profiles a month.
+[Pricing](https://brightdata.com/pricing/web-scraper) lists the rates after that.
+
 ## Support
 
 Bugs in this repo:
@@ -479,6 +493,6 @@ Anything about the API, your account or your credits:
 
 [Apache 2.0](LICENSE).
 
-## Python version
+## LinkedIn scraper for Python
 
 The same LinkedIn scraper is available for Python: [brightdata/linkedin-scraper](https://github.com/brightdata/linkedin-scraper).
