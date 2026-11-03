@@ -64,7 +64,7 @@ Satya Nadella | Chairman and CEO at Microsoft
 12172205 followers, 500 connections
 ```
 
-Expect one to three minutes: the API runs a job and `toResult` waits for it.
+Usually under a minute: the API runs a job and `toResult` waits for it.
 One [credit](https://brightdata.com/pricing/web-scraper) per profile.
 
 Three things in that snippet are not optional.
