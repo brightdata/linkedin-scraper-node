@@ -2,6 +2,9 @@
 
 # LinkedIn scraper for Node.js and JavaScript
 
+Scrape LinkedIn profiles, companies, jobs and posts to JSON with Node.js and JavaScript. No LinkedIn login, no browser.
+Built on the [Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github). New accounts get 5,000 free credits a month.
+
 [![Live check](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml)
 [![last verified](https://img.shields.io/badge/last%20verified-9%20Nov%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
 
