@@ -1,9 +1,9 @@
-[![Scrape LinkedIn data with the LinkedIn Scraper API: profiles, companies, jobs, posts. Collect or discover by URL, name and keyword. Start free.](.github/banner.png)](https://brightdata.com/products/web-scraper/linkedin?utm_source=github)
+[![Scrape LinkedIn data with the LinkedIn Scraper API: profiles, companies, jobs, posts. Collect or discover by URL, name and keyword. Start free.](.github/banner.png)](https://brightdata.com/products/web-scraper/linkedin?utm_source=github&utm_medium=referral&utm_content=linkedin-scraper-node)
 
 # LinkedIn scraper for Node.js and JavaScript
 
 Scrape LinkedIn profiles, companies, jobs and posts to JSON with Node.js and JavaScript. No LinkedIn login, no browser.
-Built on the [Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github). New accounts get 5,000 free credits a month.
+Built on the [Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github&utm_medium=referral&utm_content=linkedin-scraper-node). New accounts get 5,000 free credits a month.
 
 [![Live check](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml)
 [![last verified](https://img.shields.io/badge/last%20verified-9%20Nov%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
@@ -12,7 +12,7 @@ Built on the [Bright Data LinkedIn Scraper API](https://brightdata.com/products/
 
 LinkedIn profiles, companies, jobs and posts as JSON, in JavaScript. No LinkedIn
 login, no browser. Built on the
-[Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github).
+[Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github&utm_medium=referral&utm_content=linkedin-scraper-node).
 
 Uses the [Bright Data JavaScript SDK](https://github.com/brightdata/sdk-js).
 Full API docs:
