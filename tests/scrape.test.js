@@ -396,3 +396,22 @@ describe("the README", () => {
     );
   });
 });
+
+describe("hosts", () => {
+  test("a URL on another host is not a profile", () => {
+    assert.equal(cleanSlug("linkedin.com/in/satyanadella"), "satyanadella");
+    for (const url of [
+      "https://evil.com/linkedin.com/in/satyanadella",
+      "https://linkedin.com.evil.com/in/satyanadella",
+      "https://notlinkedin.com/in/satyanadella",
+    ]) {
+      assert.throws(() => cleanSlug(url), /is not a LinkedIn profile/, url);
+    }
+  });
+
+  test("a long run of slashes is cheap to reject", () => {
+    const started = Date.now();
+    assert.throws(() => cleanSlug(`${"/".repeat(50_000)}x`));
+    assert.ok(Date.now() - started < 500);
+  });
+});

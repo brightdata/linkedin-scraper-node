@@ -30,12 +30,48 @@ const SLUG = /^[A-Za-z0-9\-_%.]{2,100}$/;
  */
 export const sdk = { bdclient };
 
+/**
+ * value parsed as a URL, when its host is domain or a subdomain of it.
+ * A substring test would let https://evil.com/linkedin.com/x through; the host is
+ * what decides which site a URL names.
+ */
+function urlOn(value, domain) {
+  let url;
+  try {
+    url = new URL(value.includes("://") ? value : `https://${value}`);
+  } catch {
+    return null;
+  }
+  const host = url.hostname.toLowerCase();
+  return host === domain || host.endsWith(`.${domain}`) ? url : null;
+}
+
+/** new URL() percent-encodes the path; read it as it was typed. */
+function safeDecode(path) {
+  try {
+    return decodeURIComponent(path);
+  } catch {
+    return path;
+  }
+}
+
+/** value without leading and trailing ch, without a backtracking regex. */
+function trimChar(value, ch, { start = true, end = true } = {}) {
+  let from = 0;
+  let to = value.length;
+  while (start && from < to && value[from] === ch) from += 1;
+  while (end && to > from && value[to - 1] === ch) to -= 1;
+  return value.slice(from, to);
+}
+
 /** Accept satyanadella, a full profile URL, or one with a query string. */
 export function cleanSlug(input) {
   let cleaned = String(input ?? "").trim();
-  cleaned = cleaned.split("?")[0].split("#")[0].replace(/\/+$/, "");
-  if (cleaned.includes("linkedin.com/")) {
-    cleaned = cleaned.slice(cleaned.lastIndexOf("/") + 1);
+  cleaned = trimChar(cleaned.split("?")[0].split("#")[0], "/", { start: false });
+  if (cleaned.includes("/")) {
+    const url = urlOn(cleaned, "linkedin.com");
+    if (!url) throw new Error(`${JSON.stringify(String(input))} is not a LinkedIn profile`);
+    cleaned = safeDecode(url.pathname).split("/").filter(Boolean).pop() ?? "";
   }
   if (!SLUG.test(cleaned)) {
     throw new Error(`${JSON.stringify(String(input))} is not a LinkedIn profile`);
