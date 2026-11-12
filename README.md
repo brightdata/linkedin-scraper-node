@@ -6,7 +6,7 @@ Scrape LinkedIn profiles, companies, jobs and posts to JSON with Node.js and Jav
 Built on the [Bright Data LinkedIn Scraper API](https://brightdata.com/products/web-scraper/linkedin?utm_source=github&utm_medium=referral&utm_content=linkedin-scraper-node). New accounts get 5,000 free credits a month.
 
 [![Live check](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml/badge.svg)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml)
-[![last verified](https://img.shields.io/badge/last%20verified-11%20Nov%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the daily run -->
+[![last verified](https://img.shields.io/badge/last%20verified-11%20Nov%202026-brightgreen)](https://github.com/brightdata/linkedin-scraper-node/actions/workflows/live.yml) <!-- verified: rewritten by the weekly run -->
 
 [Quickstart](#how-to-scrape-linkedin-data-with-nodejs) · [No login](#scrape-linkedin-without-login) · [CLI](#bulk-linkedin-profile-scraper-cli) · [Endpoints](#scrape-linkedin-profiles-companies-jobs-and-posts) · [Data](#linkedin-profile-data-fields-json) · [Errors](#linkedin-scraper-errors) · [MCP and Claude Code](#linkedin-mcp-server-and-claude-code-skill) · [Free credits](#is-this-linkedin-scraper-free) · [Docs](https://docs.brightdata.com/products/scrapers/linkedin/introduction) · [Support](#support)
 
@@ -331,7 +331,7 @@ and `last_name`. Read that flag rather than keeping your own list.
 <details>
 <summary>All 47 fields, with type and description</summary>
 
-Regenerated every day from the dataset schema, via
+Regenerated every week from the dataset schema, via
 `client.datasets.linkedinProfiles.getMetadata()`, so it cannot go stale. A
 profile carries the fields that apply to it: the sample file has 32
 of these 47, plus `timestamp` and `input`,
