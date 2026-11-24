@@ -135,7 +135,7 @@ rows. `scrape` never rejects for one bad profile; check `ok` before reading
 `profile`:
 
 ```javascript
-import { scrape } from "@brightdata/linkedin-scraper-node";
+import { scrape } from "@brightdata/linkedin-scraper";
 
 for (const outcome of await scrape(["satyanadella", "zz-not-a-real-profile-zz"])) {
   if (outcome.ok) {
